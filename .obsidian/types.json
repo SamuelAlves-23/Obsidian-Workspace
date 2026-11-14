@@ -1,0 +1,18 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Type": "multitext",
+    "Encargados": "multitext",
+    "Estado": "multitext",
+    "Inicio": "date",
+    "Final": "date",
+    "Rol": "multitext",
+    "Dependencia": "multitext",
+    "Campo": "multitext",
+    "Autores": "multitext",
+    "Tipo de nota": "multitext",
+    "Sprint": "multitext"
+  }
+}

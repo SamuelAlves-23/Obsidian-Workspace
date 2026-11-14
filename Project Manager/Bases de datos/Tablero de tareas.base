@@ -1,0 +1,112 @@
+filters:
+  and:
+    - file.ext == "md"
+views:
+  - type: powerbases-board
+    name: Tablero
+    filters:
+      and:
+        - note["Tipo de nota"].contains("Tarea")
+        - file.name != "Plantilla de tarea"
+    order:
+      - file.name
+      - Inicio
+      - Final
+    pbGroup: note.Sprint
+    rankProp: note.pb-order
+    showEmpty: true
+    pbAggProp: note.Encargados
+    pb-colOrder:
+      - Sin empezar
+      - En progreso
+      - Completado
+  - type: powerbases-table
+    name: Table
+  - type: powerbases-calendar
+    name: Calendar
+    dateProp: note.start
+  - type: powerbases-timeline
+    name: Timeline
+    startProp: note.start
+    endProp: note.end
+    colorProp: note.status
+  - type: powerbases-board
+    name: Tablero Alejandro
+    filters:
+      and:
+        - Tipo.contains("Tarea")
+        - Encargados.contains("Alejandro")
+    pbGroup: note.Estado
+    showEmpty: true
+  - type: powerbases-board
+    name: Tablero Herbert
+    filters:
+      and:
+        - Tipo.contains("Tarea")
+        - Encargados.contains("Herbert")
+    pbGroup: note.Estado
+  - type: powerbases-board
+    name: Tablero Jose Luis
+    filters:
+      and:
+        - Tipo.contains("Tarea")
+        - Encargados.contains("Jose Luis")
+    pbGroup: note.Estado
+  - type: powerbases-board
+    name: Tablero Luisma
+    filters:
+      and:
+        - Tipo.contains("Tarea")
+        - Encargados.contains("Luisma")
+    pbGroup: note.Estado
+    pb-colOrder:
+      - Sin empezar
+      - En progreso
+      - Completado
+  - type: powerbases-board
+    name: Tablero Samuel
+    filters:
+      and:
+        - Tipo.contains("Tarea")
+        - Encargados.contains("Samuel")
+    pbGroup: note.Estado
+    pb-colOrder:
+      - Sin empezar
+      - En progreso
+      - Completado
+  - type: powerbases-board
+    name: Sprint 0
+    filters:
+      and:
+        - file.name != "Plantilla de tarea"
+        - note["Tipo de nota"].contains(link("Tarea"))
+        - Sprint == ["[[Sprint 0]]"]
+    pbGroup: note.Estado
+  - type: powerbases-board
+    name: Sprint 1
+    filters:
+      and:
+        - file.name != "Plantilla de tarea"
+        - note["Tipo de nota"].contains(link("Tarea"))
+        - Sprint == ["[[Sprint 1]]"]
+    pbGroup: note.Estado
+    pb-colOrder:
+      - Sin empezar
+      - En progreso
+      - Completado
+    pb-folded:
+      - "\0"
+  - type: powerbases-board
+    name: Sprint 2
+    filters:
+      and:
+        - file.name != "Plantilla de tarea"
+        - note["Tipo de nota"].contains(link("Tarea"))
+        - Sprint == ["[[Sprint 2]]"]
+    pbGroup: note.Estado
+    pb-colOrder:
+      - Sin empezar
+      - En progreso
+      - Completado
+    pb-folded:
+      - "\0"
